@@ -1,0 +1,9 @@
+pillow
+h5py
+keras
+tqdm
+opencv
+scipy
+scikit-image
+tensorflow
+jupyter
