@@ -45,12 +45,12 @@ elif init_with == "last":
 
 # Training dataset
 dataset_train = BowlDataset()
-dataset_train.load_bowl('stage1_train_copy')
+dataset_train.load_bowl('stage1_train')
 dataset_train.prepare()
 
 # # Validation dataset
 dataset_val = BowlDataset()
-dataset_val.load_bowl('stage1_train_copy')
+dataset_val.load_bowl('stage1_train')
 dataset_val.prepare()
 
 # Train the head branches
