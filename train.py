@@ -3,7 +3,7 @@ import os
 from bowl_config import bowl_config
 from bowl_dataset import BowlDataset
 import utils
-import model_cq as modellib
+import model_resnext as modellib
 
 # Root directory of the project
 ROOT_DIR = os.getcwd()
