@@ -78,7 +78,10 @@ def read_train_data(IMG_WIDTH=256,IMG_HEIGHT=256,IMG_CHANNELS=3):
     np.save("train_mask",Y_train)
     return X_train,Y_train
 # Function to read test images and return as numpy array
-def read_test_data(IMG_WIDTH=256,IMG_HEIGHT=256,IMG_CHANNELS=3):
+def read_test_data(IMG_WIDTH=256,IMG_HEIGHT=256,IMG_CHANNELS=3, id=None):
+    if id != None:
+        test_ids = [id]
+    
     X_test = np.zeros((len(test_ids), IMG_HEIGHT, IMG_WIDTH, IMG_CHANNELS), dtype=np.uint8)
     sizes_test = []
     print('\nGetting and resizing test images ... ')
@@ -193,8 +196,6 @@ def get_unet(IMG_WIDTH=256,IMG_HEIGHT=256,IMG_CHANNELS=3):
 # get train_data
 train_img,train_mask = read_train_data()
 
-# get test_data
-test_img,test_img_sizes = read_test_data()
 
 # get u_net model
 u_net = get_unet()
@@ -239,7 +240,14 @@ print("Predicting")
 import matplotlib.pyplot as plt
 train_ids = next(os.walk(TRAIN_PATH))[1]
 test_ids = next(os.walk(TEST_PATH))[1]
+
+# get test_data
+test_img,test_img_sizes = read_test_data(id='0f1f896d9ae5a04752d3239c690402c022db4d72c0d2c087d73380896f72c466')
 # Predict on test data
+test_mask = u_net.predict(test_img,verbose=1)
+#0f1f896d9ae5a04752d3239c690402c022db4d72c0d2c087d73380896f72c466.png
+#%%
+test_mask_0fid = ['0f1f896d9ae5a04752d3239c690402c022db4d72c0d2c087d73380896f72c466']
 test_mask = u_net.predict(test_img,verbose=1)
 np.save('test_mask.npy',test_mask)
 inn = 35
