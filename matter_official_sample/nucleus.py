@@ -283,14 +283,14 @@ def train(model, dataset_dir, subset):
     print("Train network heads")
     model.train(dataset_train, dataset_val,
                 learning_rate=config.LEARNING_RATE,
-                epochs=20,
+                epochs=1,
                 augmentation=augmentation,
-                layers='heads')
+                layers='4+')
 
     print("Train all layers")
     model.train(dataset_train, dataset_val,
                 learning_rate=config.LEARNING_RATE,
-                epochs=40,
+                epochs=0,
                 augmentation=augmentation,
                 layers='all')
 
