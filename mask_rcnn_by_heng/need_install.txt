@@ -1,0 +1,6 @@
+pillow
+opencv
+torchvision
+pandas
+matplotlib
+scikit-image
