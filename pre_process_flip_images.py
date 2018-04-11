@@ -53,12 +53,36 @@ for n, id_ in tqdm(enumerate(train_ids), total=len(train_ids)):
 
     path = TRAIN_PATH + id_
     image__ = imread(path + '/images/' + id_ + '.png')[:, :, :IMG_CHANNELS]
+    mask_imgs_flip = list()
     mask_imgs = list()
-
+    id__ = 'i' + getNameFromTime()
     temp_imgs = next(os.walk(path + '/masks/'))[2]
     assert len(temp_imgs) > 0
     for mask in temp_imgs:
         mask_img = imread(path + '/masks/' + mask)
         mask_imgs.append(mask_img)
+        mask_imgs_flip.append(np.fliplr(mask_img))
+    image__flip = np.fliplr(image__)
+    id__flip = 'i' + getNameFromTime()
+    dirPath = ''
+    os.mkdir(os.path.join(dirPath, 'stage1_train_copy/' + id__))
+    os.mkdir(os.path.join(dirPath, 'stage1_train_copy/' + id__ + '/images/'))
+    os.mkdir(os.path.join(dirPath, 'stage1_train_copy/' + id__ + '/masks/'))
+    path___ = os.path.join(dirPath, 'stage1_train_copy/' + id__ + '/images/' + id__ + '.png')
+    imsave(path___, image__)
+    for mask_ in mask_imgs:
+        mask_id = 'm' + getNameFromTime()
+        path__m = os.path.join(dirPath, 'stage1_train_copy/' + id__ + '/masks/' + mask_id + '.png')
+        imsave(path__m, mask_)
 
+    os.mkdir(os.path.join(dirPath, 'stage1_train_copy/' + id__flip))
+    os.mkdir(os.path.join(dirPath, 'stage1_train_copy/' + id__flip + '/images/'))
+    os.mkdir(os.path.join(dirPath, 'stage1_train_copy/' + id__flip + '/masks/'))
+    path___ = os.path.join(dirPath, 'stage1_train_copy/' + id__flip + '/images/' + id__flip + '.png')
+
+    imsave(path___, image__flip)
+    for mask_ in mask_imgs_flip:
+        mask_id = 'm' + getNameFromTime()
+        path__m = os.path.join(dirPath, 'stage1_train_copy/' + id__flip + '/masks/' + mask_id + '.png')
+        imsave(path__m, mask_)
 
