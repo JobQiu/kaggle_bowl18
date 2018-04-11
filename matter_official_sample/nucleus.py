@@ -42,6 +42,7 @@ import datetime
 import numpy as np
 import skimage.io
 from imgaug import augmenters as iaa
+from tqdm import tqdm
 
 # Root directory of the project
 ROOT_DIR = os.path.abspath("../../")
@@ -283,14 +284,14 @@ def train(model, dataset_dir, subset):
     print("Train network heads")
     model.train(dataset_train, dataset_val,
                 learning_rate=config.LEARNING_RATE,
-                epochs=1,
+                epochs=20,
                 augmentation=augmentation,
                 layers='4+')
 
     print("Train all layers")
     model.train(dataset_train, dataset_val,
                 learning_rate=config.LEARNING_RATE,
-                epochs=0,
+                epochs=10,
                 augmentation=augmentation,
                 layers='all')
 
@@ -373,7 +374,7 @@ def detect(model, dataset_dir, subset):
     dataset.prepare()
     # Load over images
     submission = []
-    for image_id in dataset.image_ids:
+    for image_id in tqdm(dataset.image_ids):
         # Load image and run detection
         image = dataset.load_image(image_id)
         # Detect objects
