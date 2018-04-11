@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d8ab1e8a-8be9-4f2f-b822-fdf6642ad63e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/ensemble.py" afterPath="$PROJECT_DIR$/ensemble.py" />
-    </list>
+    <list default="true" id="d8ab1e8a-8be9-4f2f-b822-fdf6642ad63e" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +63,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Makefile" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Makefile" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mask_rcnn_by_heng/20180306/build/mask-rcnn-resnet50-ver-01.a/net/lib/box/nms/gpu_nms/src/Makefile">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="192">
@@ -106,10 +103,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="setup.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="setup.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mask_rcnn_by_heng/20180306/build/mask-rcnn-resnet50-ver-01.a/net/lib/box/nms/gpu_nms/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3000">
+            <state relative-caret-position="359">
               <caret line="132" column="37" lean-forward="false" selection-start-line="132" selection-start-column="37" selection-end-line="132" selection-end-column="37" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
@@ -177,12 +174,12 @@
         <option value="$PROJECT_DIR$/pre_process_flip_images.py" />
         <option value="$PROJECT_DIR$/ensemble.py" />
         <option value="$PROJECT_DIR$/mask_rcnn_by_heng/20180306/build/mask-rcnn-resnet50-ver-01.a/train_0.py" />
-        <option value="$PROJECT_DIR$/mask_rcnn_by_heng/20180306/build/mask-rcnn-resnet50-ver-01.a/net/lib/box/nms/gpu_nms/setup.py" />
         <option value="$PROJECT_DIR$/mask_rcnn_by_heng/20180306/build/mask-rcnn-resnet50-ver-01.a/net/lib/box/overlap/cython_overlap/setup.py" />
         <option value="$PROJECT_DIR$/mask_rcnn_by_heng/20180306/build/mask-rcnn-resnet50-ver-01.a/net/lib/box/nms/cython_nms/setup.py" />
         <option value="$PROJECT_DIR$/mask_rcnn_by_heng/20180306/build/mask-rcnn-resnet50-ver-01.a/net/lib/roi_align_pool_tf/src/Makefile" />
         <option value="$PROJECT_DIR$/mask_rcnn_by_heng/20180306/build/mask-rcnn-resnet50-ver-01.a/net/lib/box/nms/torch_nms/src/Makefile" />
         <option value="$PROJECT_DIR$/mask_rcnn_by_heng/20180306/build/mask-rcnn-resnet50-ver-01.a/net/lib/box/nms/gpu_nms/src/Makefile" />
+        <option value="$PROJECT_DIR$/mask_rcnn_by_heng/20180306/build/mask-rcnn-resnet50-ver-01.a/net/lib/box/nms/gpu_nms/setup.py" />
       </list>
     </option>
   </component>
@@ -193,8 +190,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-115" />
-    <option name="y" value="55" />
+    <option name="x" value="181" />
+    <option name="y" value="62" />
     <option name="width" value="1440" />
     <option name="height" value="819" />
   </component>
@@ -247,75 +244,6 @@
               <item name="kaggle_bowl182" type="b2602c69:ProjectViewProjectNode" />
               <item name="kaggle_bowl182" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="kaggle_bowl182" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaggle_bowl182" type="462c0819:PsiDirectoryNode" />
-              <item name="20180306" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kaggle_bowl182" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaggle_bowl182" type="462c0819:PsiDirectoryNode" />
-              <item name="20180306" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kaggle_bowl182" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaggle_bowl182" type="462c0819:PsiDirectoryNode" />
-              <item name="20180306" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kaggle_bowl182" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaggle_bowl182" type="462c0819:PsiDirectoryNode" />
-              <item name="20180306" type="462c0819:PsiDirectoryNode" />
-              <item name="results" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kaggle_bowl182" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaggle_bowl182" type="462c0819:PsiDirectoryNode" />
-              <item name="20180306" type="462c0819:PsiDirectoryNode" />
-              <item name="results" type="462c0819:PsiDirectoryNode" />
-              <item name="dummy_results" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kaggle_bowl182" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaggle_bowl182" type="462c0819:PsiDirectoryNode" />
-              <item name="20180306" type="462c0819:PsiDirectoryNode" />
-              <item name="results" type="462c0819:PsiDirectoryNode" />
-              <item name="dummy_results" type="462c0819:PsiDirectoryNode" />
-              <item name="train" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kaggle_bowl182" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaggle_bowl182" type="462c0819:PsiDirectoryNode" />
-              <item name="mask_rcnn_by_heng" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kaggle_bowl182" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaggle_bowl182" type="462c0819:PsiDirectoryNode" />
-              <item name="mask_rcnn_by_heng" type="462c0819:PsiDirectoryNode" />
-              <item name="20180306" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kaggle_bowl182" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaggle_bowl182" type="462c0819:PsiDirectoryNode" />
-              <item name="mask_rcnn_by_heng" type="462c0819:PsiDirectoryNode" />
-              <item name="20180306" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kaggle_bowl182" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaggle_bowl182" type="462c0819:PsiDirectoryNode" />
-              <item name="mask_rcnn_by_heng" type="462c0819:PsiDirectoryNode" />
-              <item name="20180306" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="mask-rcnn-resnet50-ver-01.a" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kaggle_bowl182" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaggle_bowl182" type="462c0819:PsiDirectoryNode" />
-              <item name="u-net" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -335,6 +263,11 @@
         <option name="myUseModuleSdk" value="true" />
       </console-settings>
     </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -457,7 +390,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-115" y="55" width="1440" height="819" extended-state="0" />
+    <frame x="181" y="62" width="1440" height="819" extended-state="0" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.592503" sideWeight="0.5028612" order="7" side_tool="true" content_ui="tabs" />
@@ -751,16 +684,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mask_rcnn_by_heng/20180306/build/mask-rcnn-resnet50-ver-01.a/net/lib/box/nms/gpu_nms/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3000">
-          <caret line="132" column="37" lean-forward="false" selection-start-line="132" selection-start-column="37" selection-end-line="132" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mask_rcnn_by_heng/20180306/build/mask-rcnn-resnet50-ver-01.a/train_0.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
@@ -812,6 +735,16 @@
         <state relative-caret-position="192">
           <caret line="8" column="108" lean-forward="false" selection-start-line="8" selection-start-column="108" selection-end-line="8" selection-end-column="108" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mask_rcnn_by_heng/20180306/build/mask-rcnn-resnet50-ver-01.a/net/lib/box/nms/gpu_nms/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="132" column="37" lean-forward="false" selection-start-line="132" selection-start-column="37" selection-end-line="132" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
