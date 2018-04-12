@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 import os
 import datetime        
 import scipy.misc
+from PIL import Image
 
 def rle_decode(rle, shape):
     """Decodes an RLE encoded list of space separated
@@ -39,10 +40,11 @@ for index, row in stage1_solution.iterrows():
     id_ = row['ImageId']
     if os.path.exists('stage1_test/'+id_):
         temp = rle_decode(rle = row['EncodedPixels'],shape=[row['Height'],row['Width']])
+        im = Image.fromarray(temp)
         path_temp = 'stage1_test/'+id_+'/masks'
         if not os.path.exists(path_temp):
             os.mkdir(path_temp)
-        path_temp = 'stage1_test/'+id_+'/masks/'+getNameFromTime()
-        scipy.misc.imsave(path_temp, temp)
+        path_temp = 'stage1_test/'+id_+'/masks/'+getNameFromTime()+'.png'
+        im.save(path_temp)
 
 #%%
