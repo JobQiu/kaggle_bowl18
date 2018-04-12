@@ -298,17 +298,17 @@ def train(model, dataset_dir, subset):
     print("Train network heads")
     model.train(dataset_train, dataset_val,
                 learning_rate=config.LEARNING_RATE,
-                epochs=20,
+                epochs=30,
                 augmentation=augmentation,
-                layers='4+')
-
+                layers='all')
+"""
     print("Train all layers")
     model.train(dataset_train, dataset_val,
                 learning_rate=config.LEARNING_RATE,
                 epochs=30,
                 augmentation=augmentation,
                 layers='all')
-
+"""
 
 ############################################################
 #  RLE Encoding
