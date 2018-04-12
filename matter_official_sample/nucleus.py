@@ -301,6 +301,24 @@ def train(model, dataset_dir, subset):
                 epochs=50,
                 augmentation=augmentation,
                 layers='all')
+    
+    def send_msg(msg="...",
+                 dingding_url = "https://oapi.dingtalk.com/robot/send?access_token=67f442405a74c7f0115b5e9f63da890029c7a3a41c371f436e059f1f63497eef"
+                 ):
+        import requests
+        import json
+        headers = {"Content-Type": "application/json; charset=utf-8"}
+        
+        post_data = {
+            "msgtype": "text", 
+            "text": {
+                "content": msg
+            }
+        }
+        
+        requests.post(dingding_url, headers=headers, 
+                data=json.dumps(post_data))
+    send_msg('50 done')
 """
     print("Train all layers")
     model.train(dataset_train, dataset_val,
