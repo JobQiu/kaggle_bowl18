@@ -7,10 +7,8 @@ Created on Wed Apr 11 23:34:31 2018
 """
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 import os
 import datetime        
-import scipy.misc
 from PIL import Image
 
 def rle_decode(rle, shape):
