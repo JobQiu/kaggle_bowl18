@@ -6,6 +6,11 @@ Created on Wed Apr 11 23:34:31 2018
 @author: xavier.qiu
 """
 import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import os
+import datetime        
+import scipy.misc
 
 def rle_decode(rle, shape):
     """Decodes an RLE encoded list of space separated
@@ -22,3 +27,22 @@ def rle_decode(rle, shape):
     # Reshape and transpose
     mask = mask.reshape([shape[1], shape[0]]).T
     return mask
+
+stage1_solution = pd.read_csv('stage1_solution.csv')
+def getNameFromTime():
+    now = datetime.datetime.now()
+    return (str)(now.minute) + (str)(now.second) + (str)(now.microsecond)
+
+
+for index, row in stage1_solution.iterrows():
+    
+    id_ = row['ImageId']
+    if os.path.exists('stage1_test/'+id_):
+        temp = rle_decode(rle = row['EncodedPixels'],shape=[row['Height'],row['Width']])
+        path_temp = 'stage1_test/'+id_+'/masks'
+        if not os.path.exists(path_temp):
+            os.mkdir(path_temp)
+        path_temp = 'stage1_test/'+id_+'/masks/'+getNameFromTime()
+        scipy.misc.imsave(path_temp, temp)
+
+#%%
