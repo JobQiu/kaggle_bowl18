@@ -413,6 +413,7 @@ def detect(model, dataset_dir, subset):
         r = model.detect([image], verbose=0)[0]
         # Encode image to RLE. Returns a string of multiple lines
         source_id = dataset.image_info[image_id]["id"]
+        print(image_id)
         rle = mask_to_rle(source_id, r["masks"], r["scores"])
         submission.append(rle)
         # Save image with masks
