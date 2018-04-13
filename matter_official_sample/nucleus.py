@@ -417,7 +417,7 @@ def detect(model, dataset_dir, subset):
         r = model.detect([image], verbose=0)[0]
         # Encode image to RLE. Returns a string of multiple lines
         source_id = dataset.image_info[image_id]["id"]
-        print(source_id)
+        #print(source_id)
         rle = mask_to_rle(source_id, r["masks"], r["scores"])
         submission.append(rle)
         # Save image with masks
@@ -427,6 +427,7 @@ def detect(model, dataset_dir, subset):
             show_bbox=False, show_mask=False,
             title="Predictions")
         plt.savefig("{}/{}.png".format(submit_dir, dataset.image_info[image_id]["id"]))
+        plt.close('all')
 
     # Save to csv file
     submission = "ImageId,EncodedPixels\n" + "\n".join(submission)
