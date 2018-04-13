@@ -2292,7 +2292,7 @@ class MaskRCNN():
         windows = np.stack(windows)
         return molded_images, image_metas, windows
 
-    def unmold_detections(self, detections, mrcnn_mask, image_shape, window):
+    def unmold_detections(self, detections, mrcnn_mask, image_shape, window, probability_mask = False):
         """Reformats the detections of one image from the format of the neural
         network output to a format suitable for use in the rest of the
         application.

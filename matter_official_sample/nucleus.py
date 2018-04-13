@@ -371,10 +371,14 @@ def mask_to_rle(image_id, mask, scores):
     # Remove mask overlaps
     # Multiply each instance mask by its score order
     # then take the maximum across the last dimension
+    lines = []
+    if mask.shape[0] == 0:
+        rle = ''
+        lines.append("{}, {}".format(image_id, rle))
+        return "\n".join(lines)
     order = np.argsort(scores)[::-1] + 1  # 1-based descending
     mask = np.max(mask * np.reshape(order, [1, 1, -1]), -1)
     # Loop over instance masks
-    lines = []
     for o in order:
         m = np.where(mask == o, 1, 0)
         # Skip if empty
