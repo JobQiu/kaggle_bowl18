@@ -60,7 +60,9 @@ for image_id in tqdm(sample_submission.ImageId):
     results = model.detect([original_image], verbose=0, probablymask=True)
     results2 = model2.detect([original_image], verbose=0, probablymask=True)
     results101 = model_res101.detect([original_image], verbose=0, probablymask=True)
-
+    temp = []
+    temp.append(original_image)
+    u_net.predict(np.array(temp))
 
     r = results[0]
     masks = r['masks']
