@@ -103,6 +103,7 @@ from tqdm import tqdm
 from skimage.io import imread, imsave
 import numpy as np
 import datetime
+import cv2
 
 problem_ids = list()
 '''problem_ids.append('7b38c9173ebe69b4c6ba7e703c0c27f39305d9b2910f46405993d2ea7a963b80')
@@ -189,7 +190,7 @@ for n, id_ in tqdm(enumerate(train_ids), total=len(train_ids)):
         continue
     
     path = TRAIN_PATH + id_
-    image__ = imread(path + '/images/' + id_ + '.png')[:,:,:IMG_CHANNELS]
+    image__ = cv2.imread(path + '/images/' + id_ + '.png')[:,:,:IMG_CHANNELS]
     if image__.shape[0] <= 256 and image__.shape[1] <= 256:
         continue
     if image__.shape[0] < 256 or image__.shape[1] < 256:
@@ -200,7 +201,7 @@ for n, id_ in tqdm(enumerate(train_ids), total=len(train_ids)):
     temp_imgs = next(os.walk(path+'/masks/'))[2]
     assert len(temp_imgs) > 0
     for mask in temp_imgs:
-        mask_img = imread(path+'/masks/'+mask)
+        mask_img = cv2.imread(path+'/masks/'+mask)
         mask_imgs.append(mask_img)
 
     sliceImg(image__,mask_imgs,img_id = id_)
