@@ -190,6 +190,8 @@ for n, id_ in tqdm(enumerate(train_ids), total=len(train_ids)):
         continue
     
     path = TRAIN_PATH + id_
+    if not os.path.exists(path + '/masks/') or os.listdir(path+'/masks/') == [] :
+          continue
     image__ = cv2.imread(path + '/images/' + id_ + '.png')[:,:,:IMG_CHANNELS]
     if image__.shape[0] <= 256 and image__.shape[1] <= 256:
         continue
