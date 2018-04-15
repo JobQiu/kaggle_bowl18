@@ -18,7 +18,7 @@ model = modellib.MaskRCNN(mode="inference",
                           config=inference_config,
                           model_dir=MODEL_DIR)
 
-model_path = 'mask_rcnn_weights.h5'
+model_path = 'weights/mask_rcnn_1.h5'
 
 # Load trained weights (fill in path to trained weights here)
 assert model_path != "", "Provide path to trained weights"
@@ -29,14 +29,14 @@ model2 = modellib.MaskRCNN(mode="inference",
                           config=inference_config,
                           model_dir=MODEL_DIR)
 
-model2_path = 'mask_rcnn_weights.h5'
+model2_path = 'weights/mask_rcnn_2.h5'
 model2.load_weights(model2_path, by_name=True)
 
 model_res101 = modellib.MaskRCNN(mode="inference",
                           config=inference_config101,
                           model_dir=MODEL_DIR)
 
-model101_path = 'mask_rcnn_weights.h5'
+model101_path = 'weights/mask_rcnn_101.h5'
 model_res101.load_weights(model101_path, by_name=True)
 
 
@@ -47,7 +47,6 @@ dataset_test = BowlDataset()
 dataset_test.load_bowl('stage2_test_final')
 
 dataset_test.prepare()
-
 output = []
 sample_submission = pd.read_csv('stage2_sample_submission_final.csv')
 ImageId = []
@@ -55,14 +54,19 @@ EncodedPixels = []
 print('start predicting')
 for image_id in tqdm(sample_submission.ImageId):
 
-    image_path = os.path.join('stage1_test', image_id, 'images', image_id + '.png')
+    image_path = os.path.join('stage2_test_final', image_id, 'images', image_id + '.png')
 
     original_image = cv2.imread(image_path)
     results = model.detect([original_image], verbose=0, probablymask=True)
-    r = results[0]
+    results2 = model2.detect([original_image], verbose=0, probablymask=True)
+    results101 = model_res101.detect([original_image], verbose=0, probablymask=True)
 
+
+    r = results[0]
     masks = r['masks']
     probablymasks = r['probablymasks']
+
+
 
 
     ImageId_batch, EncodedPixels_batch = f.numpy2encoding_no_overlap2(masks, image_id, r['scores'])
