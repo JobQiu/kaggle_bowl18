@@ -38,10 +38,11 @@ for image_id in tqdm(sample_submission.ImageId):
     image_path = os.path.join('stage1_test', image_id, 'images', image_id + '.png')
     
     original_image = cv2.imread(image_path)
-    results = model.detect([original_image], verbose=0)
+    results = model.detect([original_image], verbose=0, probablymask = True)
     r = results[0]
     
     masks = r['masks']
+    probablymasks = r['probablymasks']
     ImageId_batch, EncodedPixels_batch = f.numpy2encoding_no_overlap2(masks, image_id, r['scores'])
     ImageId += ImageId_batch
     EncodedPixels += EncodedPixels_batch
